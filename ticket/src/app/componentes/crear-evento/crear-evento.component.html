@@ -1,0 +1,91 @@
+<nav>
+  <input type="checkbox" id= "check">
+  <label for="check" class="checkbtn">
+      <li class="fas fa-bars"></li>
+  </label>
+
+  <img [src]="imagen" class="logo">
+  <ul>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="mis-eventos">Mis eventos</a></li>
+      <li><a href="crear-evento">Nuevo evento</a></li>
+      <li><a href="signin" (click)="logout()">Cerrar sesión</a></li>
+  </ul>
+</nav>
+<!--
+  x 1.nombre del evento
+  x 2.descripcion (breve)
+  8.categoria del evento (combobox)
+  3.fechas y horas
+  x 7.precio
+
+  4.ubiacion
+  6.boletos maximos
+  9.fecha max
+-->
+<main id="main">
+  <div class="cont sombra">
+      <form class="formulario" (submit)="crearEvento()">
+          <div class="principal">
+              <h2>Crear evento</h2>
+              <div class="formulario-grupo fila1">
+                  <label for="nombre">Nombre del evento</label>
+                  <input id="nombre" [(ngModel)] = "evento.nombre" name="nombre" class="nombre" type="text" required>
+              </div>
+              <div class="formulario-grupo fila2">
+                  <label for="descripcion">Descripcion del evento</label>
+                  <textarea class="descripcion" [(ngModel)] = "evento.descripcion" name = "descripcion" rows="3" required="" id="descripcion"></textarea>
+              </div>
+              <div class="formulario-grupo fila3">
+                  <label for="categoria">Categoria del evento</label>
+                  <!--<input id="categoria" [(ngModel)] = "evento.categoria" name="categoria" class="categoria" type="text" required>-->
+                  <select [(ngModel)] = "evento.categoria" name="categoria" >
+                    <option>Deportes</option>
+                    <option>Animales</option>
+                    <option>Cocina</option>
+                    <option>Concierto</option>
+                    <option>Arte</option>
+                    <option>Social</option>
+                    <option>Cultural</option>
+                    <option>Empresarial</option>
+                    <option>Educativo</option>
+                  </select>
+              </div>
+              <div class="formulario-row fila4">
+                  <div class="formulario-grupo row1">
+                      <label for="fecha">Fecha del evento</label>
+                      <input id="fecha" name="fecha" [(ngModel)] = "evento.fecha" class="fecha" type="datetime-local" required>
+                  </div>
+                  <div class="formulario-grupo row2">
+                      <label for="precio">Precio</label>
+                      <input id="precio" [(ngModel)] = "evento.precio" name = "precio" class="precio" type="number" required>
+                  </div>
+              </div>
+
+              <div class="contenedor-imagenes">
+                <div class="formulario-grupo filad1">
+                  <label for="ubicacion">Ubicacion</label>
+                  <input type="text" [(ngModel)] = "evento.ubicacion" name="ubicacion" required>
+                </div>
+                <div class="formulario-grupo fidad2">
+                  <label for="Boletos maximos">Boletos Maximos</label>
+                  <input type="number" [(ngModel)] = "evento.boletosmax" name="boletosmax" required>
+                </div>
+                <div class="formulario-grupo filad3">
+                <label for="fecha">Fecha maxima para comprar boletos</label>
+                <input id="fechamax" name="fechamax"  [(ngModel)] = "evento.fechamax" class="fechamax" type="datetime-local" required>
+                </div>
+<!--
+                  <div class="profile-pic-div1">
+                      <img id="photo1">
+                      <input type="file" id="file1">
+                      <label for="file1" name ="file1" id="uploadbtn1">Elegir foto</label>
+                  </div>
+-->
+              </div>
+              <input type="submit" value="Enviar" id="enviar">
+           </div>
+      </form>
+  </div>
+</main>
+<footer></footer>

@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "17608810-d4a0-4513-ae75-05002622c050",
+		"name": "Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "eventos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get all events and status code 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"    const jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.be.an(\"array\"); ",
+							"    pm.expect(jsonData[0]).to.eql(",
+							"        {id:52,nombre:'javier evento 1',descripcion: 'descripcion evento 1',fecha: '2021-11-12',hora: '20:31',fecha_limite: '2021-11-15',publicado: 0,path_foto: '',ubicacion: 'Zona 9',precio: 16,categoria: 'Animales'}",
+							"    );",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjIsImlhdCI6MTYzNzQ0MTkzM30.Xt3XKJX0wBjKjvb8QiiAnP41xgDmS1AWaCR_clKF_lc",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/eventos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eventos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

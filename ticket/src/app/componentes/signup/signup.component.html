@@ -1,0 +1,29 @@
+<header id="header">
+  <div class="contenedorLogo">
+      <img class="logo" [src]="imagen" alt="logo">
+  </div>
+</header>
+<main id="main">
+  <div class="contenedor sombra">
+      <form id="frmDatos" (submit)="signUp()">
+          <legend>Registrarse</legend>
+          <div class="campos">
+              <h3>Ingresa tus datos para iniciar en tuTicket.com</h3>
+              <input type="text" [(ngModel)] = "user.region"  name="region" placeholder="Pais" id="pais" required>
+              <input type="text" [(ngModel)] = "user.nombre"  name="nombre" placeholder="Primer nombre" id="nombre" required>
+              <input type="text" [(ngModel)] = "user.apellido"  name="apellido" placeholder="Primer apellido" id="apellido" required>
+              <input type="number" placeholder="Edad" id="edad" required>
+              <input type="email" [(ngModel)] = "user.email"  name="email" placeholder="Correo electrónico" id="correo" required>
+              <input type="password"[(ngModel)] = "user.password"  name="password" placeholder="Contraseña" id="contraseña" required>
+              <div class="registro">
+                  <p>¿Ya tienes una cuenta? <a routerLink="/signin">Iniciar Sesión</a></p>
+              </div>
+              <input type="submit" value="Continúa" id="enviar">
+          </div>
+      </form>
+  </div>
+</main>
+<footer id="footer">
+
+</footer>
+

@@ -1,0 +1,23 @@
+{
+  "name": "TuTicket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "database.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daniel07816/TuTicket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daniel07816/TuTicket/issues"
+  },
+  "homepage": "https://github.com/Daniel07816/TuTicket#readme",
+  "dependencies": {
+    "pg": "^8.7.1"
+  }
+}
